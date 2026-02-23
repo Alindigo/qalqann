@@ -1,0 +1,418 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #0f0f0f;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+
+    /* Анимациялар */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+    }
+
+    @keyframes glow {
+        0%, 100% {
+            box-shadow: 0 0 5px #10b981;
+        }
+        50% {
+            box-shadow: 0 0 20px #10b981;
+        }
+    }
+
+    /* Навигация */
+    nav {
+        background-color: rgba(15, 15, 15, 0.95);
+        padding: 25px 50px;
+        border-bottom: 1px solid #1f1f1f;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        animation: slideIn 0.6s ease;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 300;
+        color: #10b981;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    nav a {
+        color: #808080;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #10b981;
+    }
+
+    nav a.active {
+        color: #10b981;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border: none;
+        text-decoration: none;
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .btn-primary {
+        background-color: #10b981;
+        color: #0f0f0f;
+    }
+
+    .btn-primary:hover {
+        background-color: #059669;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        color: #10b981;
+        border: 1px solid #10b981;
+    }
+
+    .btn-outline:hover {
+        background-color: #10b981;
+        color: #0f0f0f;
+    }
+
+    /* Басты бет */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 150px 50px 100px;
+        animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+        font-weight: 200;
+        color: #ffffff;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        animation: fadeIn 1s ease 0.2s both;
+    }
+
+    .hero h1 span {
+        color: #10b981;
+    }
+
+    .hero p {
+        font-size: 18px;
+        color: #666;
+        max-width: 500px;
+        margin: 0 auto 50px;
+        font-weight: 300;
+        animation: fadeIn 1s ease 0.4s both;
+    }
+
+    .hero-buttons {
+        animation: fadeIn 1s ease 0.6s both;
+    }
+
+    /* Секция */
+    .section {
+        padding: 100px 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        animation: fadeIn 0.8s ease;
+    }
+
+    .section-title {
+        font-size: 36px;
+        font-weight: 200;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #ffffff;
+        letter-spacing: 2px;
+    }
+
+    .section-title span {
+        color: #10b981;
+    }
+
+    /* Статистика */
+    .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 60px 0;
+    }
+
+    .stats-table td {
+        text-align: center;
+        padding: 40px 20px;
+        border: 1px solid #1f1f1f;
+        transition: all 0.3s ease;
+    }
+
+    .stats-table td:hover {
+        background-color: #1a1a1a;
+        border-color: #10b981;
+    }
+
+    .stat-number {
+        font-size: 48px;
+        font-weight: 200;
+        color: #10b981;
+        margin-bottom: 10px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Карточкалар */
+    .cards-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 20px;
+    }
+
+    .cards-table td {
+        background-color: #1a1a1a;
+        padding: 40px;
+        vertical-align: top;
+        border: 1px solid #252525;
+        transition: all 0.4s ease;
+    }
+
+    .cards-table td:hover {
+        border-color: #10b981;
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-icon {
+        font-size: 32px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.8;
+    }
+
+    /* Деңгей белгілері */
+    .level {
+        display: inline-block;
+        padding: 6px 16px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+
+    .level-easy {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: #10b981;
+        border: 1px solid #10b981;
+    }
+
+    .level-medium {
+        background-color: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+        border: 1px solid #f59e0b;
+    }
+
+    .level-hard {
+        background-color: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid #ef4444;
+    }
+
+    /* Прогресс */
+    .progress-container {
+        background-color: #1a1a1a;
+        padding: 50px;
+        border: 1px solid #252525;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .progress-bar {
+        background-color: #252525;
+        height: 4px;
+        margin: 20px 0;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        background: linear-gradient(90deg, #10b981, #059669);
+        height: 100%;
+        animation: pulse 2s infinite;
+    }
+
+    /* Форма */
+    input {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 10px 0;
+        background-color: #1a1a1a;
+        border: 1px solid #252525;
+        color: #e0e0e0;
+        font-size: 14px;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #10b981;
+    }
+
+    input::placeholder {
+        color: #555;
+    }
+
+    /* Футер */
+    footer {
+        text-align: center;
+        padding: 50px;
+        border-top: 1px solid #1f1f1f;
+        margin-top: 100px;
+    }
+
+    footer p {
+        color: #444;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    /* Сызық */
+    .divider {
+        border: none;
+        border-top: 1px solid #252525;
+        margin: 40px 0;
+    }
+
+    /* Кесте стильдері */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+    }
+
+    .data-table th {
+        background-color: #1a1a1a;
+        padding: 20px;
+        text-align: left;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        border-bottom: 1px solid #252525;
+    }
+
+    .data-table td {
+        padding: 20px;
+        border-bottom: 1px solid #1f1f1f;
+        transition: background-color 0.3s ease;
+    }
+
+    .data-table tr:hover td {
+        background-color: #1a1a1a;
+    }
+
+    /* Жаңалықтар */
+    .news-item {
+        background-color: #1a1a1a;
+        padding: 30px;
+        margin-bottom: 15px;
+        border-left: 3px solid #10b981;
+        transition: all 0.3s ease;
+    }
+
+    .news-item:hover {
+        background-color: #1f1f1f;
+        transform: translateX(10px);
+    }
+
+    .news-date {
+        font-size: 12px;
+        color: #10b981;
+        margin-top: 10px;
+    }
+
+    /* Анимация классы */
+    .animate {
+        animation: fadeIn 0.8s ease;
+    }
+
+    .delay-1 {
+        animation-delay: 0.1s;
+        animation-fill-mode: both;
+    }
+
+    .delay-2 {
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
+    }
+
+    .delay-3 {  
+        animation-delay: 0.3s;
+        animation-fill-mode: both;
+    }
